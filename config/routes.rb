@@ -5,5 +5,11 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  namespace :api, format: "json" do
+    resources :articles do
+      resources :comments
+    end
+  end
+
   root 'welcome#index'
 end
